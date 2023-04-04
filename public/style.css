@@ -1,0 +1,22 @@
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 2%;
+}
+
+#divFormularios{
+    margin: 2%;
+    display: flex;
+    justify-content: space-between;
+}
+
+form{
+    width: 45%;
+    background-color: rgb(151, 59, 59);
+    padding: 2%;
+    color: white;
+}
