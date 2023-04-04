@@ -164,4 +164,25 @@ router.post("/crear",   body("username").isString().notEmpty(),
                         }
 )
 
+router.get("/usuarios", (req, response, next) =>{
+                        if(req.isAuthenticated()){
+                            let consulta = {
+                                name: "consulta-usuarios",
+                                text: `SELECT * FROM usuario`,
+                                values: []
+                            }
+                            pool.query(consulta, (error, res)=>{
+                                if(error){
+                                    throw error
+                                }else{
+                                    let usuarios = res.rows
+                                    response.render("usuarios-registrados",{usuarios})
+                                }
+                            })
+                        }else{
+                            response.render("index")
+                        }
+}
+)
+
 export default router 
